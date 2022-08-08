@@ -1,0 +1,21 @@
+pipeline
+{
+    agent any
+    stages
+    {
+        stage ("Continious Download")
+        {
+            steps
+            {
+                git 'https://github.com/Eswar108/maven-web-application.git'
+            }
+        }
+        stage ("Continious Build")
+        {
+            steps
+            {
+               sh "mvn clean install"
+            }
+        }
+    }
+}
